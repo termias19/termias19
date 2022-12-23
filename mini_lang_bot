@@ -1,0 +1,17 @@
+import nltk
+from nltk.chat.util import Chat, reflections
+
+# Define a list of tuples containing the patterns and responses
+conversation = [
+    ("hi", "Hello, how are you?"),
+    ("i'm (.*)", "Nice to meet you, %1. How can I help you today?"),
+    ("(.*) weather today?", "I'm sorry, I am not able to access current weather information."),
+    ("(.*) created you?", "I was created by a team of programmers using the NLTK library."),
+    ("(.*)", "I'm sorry, I didn't understand your input. Could you please rephrase your question?")
+]
+
+# Create the chatbot using the defined conversation and reflections
+chatbot = Chat(conversation, reflections)
+
+# Start the chatbot
+chatbot.converse()
