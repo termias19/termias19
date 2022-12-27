@@ -1,0 +1,24 @@
+# OOP challenge
+#Create a bank account that has two attributes
+
+class Account():
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
+        
+    def __str__(self):
+        return 'Account owner: {} and \nAccount balance: {}'.format(self.owner,self.balance)
+        
+    #def __len__(self):
+       # print('Account balance: {}'.format(self.balance))
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        return 'Deposit Accepted!'
+    
+    def withdrawal(self,wd_amount):
+        
+        if self.balance >= wd_amount:
+            self.balance = self.balance - wd_amount
+            print('Withdrawal amount Accepted!')
+        else:
+            print('Sorry! Not enough funds!')
